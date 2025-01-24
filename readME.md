@@ -1,6 +1,6 @@
 # Interview Task Project
 
-This project contains three Shopify-based tasks to demonstrate a liquid snippet, order retrieval, and webhook handling. Below are step-by-step instructions to set up and test each task.
+This project contains three Shopify-based tasks to demonstrate a liquid snippet, order retrieval and webhook handling. Below are step-by-step instructions to set up and test each task.
 
 - [Prerequisites](#prerequisites)
 - [View Live Theme](#task-1-live-theme)
