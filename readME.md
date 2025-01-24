@@ -3,6 +3,7 @@
 This project contains three Shopify-based tasks to demonstrate a liquid snippet, order retrieval and webhook handling. Below are step-by-step instructions to set up and test each task.
 
 ## Contents
+
 - [Prerequisites](#prerequisites)
 - [View Live Theme](#task-1-live-theme)
 - [Setting Up the Project (Tasks 2 and 3)](#setting-up-the-project-tasks-2-and-3)
@@ -10,14 +11,12 @@ This project contains three Shopify-based tasks to demonstrate a liquid snippet,
 - [Tunnel Setup for Webhook Testing](#task-3-tunnel-setup-for-webhook-testing)
 - [Testing Instructions](#testing-instructions)
 
-
 ## Prerequisites
 
 - Node.js installed
 - Access to a Shopify store with admin privileges
 - Gmail account for SMTP setup
 - Pinggy or an alternative tunneling tool installed
-
 
 ## Task 1: Live Theme
 
@@ -29,7 +28,6 @@ This task is showcased on a live theme. Use the following credentials and link t
 ### Testing
 
 - Switch between variant options to show or hide the sale badge, depending on whether the variant is on sale.
-
 
 ## Setting Up the Project (Tasks 2 and 3)
 
@@ -81,13 +79,12 @@ To obtain `DOMAIN_URL` and `ADMIN_TOKEN`:
 - **Task 3 Only:**
   - Generate a Gmail App Password for `SMTP_USER`. Follow these steps: [How to Get a Gmail App Password](https://support.google.com/accounts/answer/185833?hl=en).
 
-
 ## Running the Project (Tasks 2 and 3)
 
 Choose from the following scripts to run the project:
 
-- `npm compile`: Watches and compiles TypeScript files into JavaScript.
-- `npm launch`: Executes the compiled app.
+- `npm run compile`: Watches and compiles TypeScript files into JavaScript.
+- `npm run launch`: Executes the compiled app.
 - `npm start`: Runs both compilation and execution concurrently.
 
 ```json
@@ -101,7 +98,6 @@ Choose from the following scripts to run the project:
 ```
 
 Note, you will need to restart the app if you make changes.
-
 
 ## Task 3: Tunnel Setup for Webhook Testing
 
@@ -120,11 +116,10 @@ Copy the `https` URL returned by Pinggy.
 ### 2. Create a Product Update Webhook
 
 1. Go to **Shopify Admin > Settings > Notifications**.
-2. Create a webhook for `product/update` events.
+2. Create a webhook for `product/update` events using version `2025-01 (Latest)`.
 3. Use the `https` URL from Pinggy as the webhook destination, appending `/productUpdate` to the end of the URL.
 
 **Note:** The Pinggy URL is valid for only 1 hour. You will need to repeat the tunnel setup steps and update the webhook URL accordingly.
-
 
 ## Testing Instructions
 
