@@ -1,0 +1,52 @@
+{% comment %}
+  Renders on sale badge
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+
+  Usage:
+  {% render 'sale-badge',
+    product: product,
+    use_variant: true | false,
+  %}
+{% endcomment %}
+
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price
+  assign available = target.available
+-%}
+
+<div id="{{ target.id }}" class="container">
+  {%- if compare_at_price > price and available -%}
+    <span class="sale-badge">On Sale</span>
+  {%- endif -%}
+</div>
+
+{% comment %} TO-DO: Improve styling {% endcomment %}
+<style>
+  .container {
+    margin: 10px 2px;
+  }
+
+  .sale-badge {
+    background-color: #e63946;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 5px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+</style>
