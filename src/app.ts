@@ -48,7 +48,7 @@ app.post("/productUpdate", async (req, res) => {
 
   if (priceDecreased) {
     const emailSent = await sendEmail({
-      to: "imogen.minoli@gmail.com",
+      to: process.env.SMTP_USER as string,
       // TO-DO: round decreasePercentage to 0 decimal places or nearest 10
       subject: `${title} has decreased in price by ${decreasePercentage}%!`,
       // TO-DO: style email

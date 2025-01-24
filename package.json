@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npx tsc --watch\" \"nodemon dist/app.js\""
+    "compile": "npx tsc --watch",
+    "launch": "node dist/app.js",
+    "start": "concurrently \"npx tsc\" \"node dist/app.js\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "description": "",
   "devDependencies": {
     "@types/express": "^4.17.1",
+    "@types/node-persist": "^3.1.8",
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.9",
     "typescript": "^5.7.3"

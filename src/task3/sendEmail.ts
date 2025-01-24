@@ -22,7 +22,6 @@ export const sendEmail = async (
     });
 
     const mailOptions = {
-      from: '"Imogen Minoli" <imogen.minoli@gmail.com>',
       to: emailOptions.to,
       subject: emailOptions.subject,
       text: emailOptions.text,
